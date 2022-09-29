@@ -103,3 +103,5 @@ effacer.addEventListener("click", function () {
   nom.value = "";
   people.innerHTML = "Les infos...";
 });
+
+// ajouter des commentaires
