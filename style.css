@@ -1,0 +1,60 @@
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+    font-family: Monospace;
+}
+
+body {
+    background: url('http://mission-blue.org/wp-content/uploads/2013/04/the-blue-planet-4fc7047462c251.jpg');
+    text-align: center;
+    background-color: #fff;
+    margin: 0;
+    overflow: hidden;
+    color: white;
+
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+form {
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.45);
+    padding: 20px;
+    width: 30%;
+    font-size: 1.3em;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 30px;
+}
+
+input {
+    cursor: pointer;
+    padding: 10px;
+}
+
+input:hover {
+    background: #1abc9c;
+    cursor: pointer;
+}
+
+@media (max-width: 980px) {
+    form {
+        width: 90%;
+    }
+
+    form input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

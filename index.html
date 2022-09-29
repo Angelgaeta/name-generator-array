@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PROJECT</title>
+</head>
+
+<body>
+    <header>
+        <form id="formulaire" method="post">
+            <h1>En savoir plus SUR TOI!</h1>
+
+            <label for="nom">Ton nom
+                <input id="nom" type="text" name="nom" placeholder="Entrer un nom" /></label>
+
+            <div style="margin-top: 20px">
+                <label for="chercher"></label>
+                <input id="chercher" class="btnChercher" type="button" name="chercher" value="Chercher"
+                    style="background-color" />
+                <label for="aleatoire"></label>
+                <input id="aleatoire" type="button" name="aleatoire" onclick="aleatoire()" value="Aleatoire" />
+                <label for="effacer"></label>
+                <input id="effacer" type="reset" value="Effacer" name="effacer" />
+            </div>
+
+            <label for="people"></label>
+            <div id="people" type="text" name="people"
+                style="margin-top:40px; background: #1abc9c; padding: 10px 15px 15px 10px;">Les infos
+                s'afficheront ici ...
+            </div>
+        </form>
+        <a style="color: blue; position: absolute; margin-top: 30px; right: 2%;"
+            href="https://www.toutjavascript.com/savoir/savoir09.php3">Voir une doc sympa 👋</a>
+
+    </header>
+    <script src="./script.js"></script>
+</body>
+
+</html>
