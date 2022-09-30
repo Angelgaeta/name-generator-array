@@ -1,3 +1,13 @@
+/*
+1. On reporte toutes les constantes en lien avec les Id du Html
+2. On créé une constante users pour le tableau avec ses éléments dedans
+3. On créé une fonction displayUser pour factoriser toute les fonctions et 
+    rendre le code plus lisible car deux fonctions sur 3 font afficher
+    quelque chose
+4. On créé les 3 fonctions pour les 3 boutons: chercher, aléatoire et effacer
+*/
+
+
 const nom = document.getElementById("nom");
 const chercher = document.getElementById("chercher");
 const aleatoire = document.getElementById("aleatoire");
@@ -67,41 +77,49 @@ const users = [
   ],
 ];
 
-function displayUser(person, position) {
+// Fonction pour factoriser le code et le rendre plus lisible
+function displayUser(person, position) { // person est représenter par guillemets obliques pour
+  // transformer en "template" tout ce qui se trouve dans ${} dedans remplacé par sa valeur
+  // position est égal à ${person[0]} 
   let html = "<h1>Personne n°" + position + "</h1>"; // on écrit "person {numéro de la personne}"
   html += `<h2>${person[0]}</h2>`;
   html += `<p>Né•e le ${person[1]}</p>`; // affiche sa date de naissance
-  html += "<h3>Son rêve</h3>"; // titre pour les couleurs
-  html += `<p>${person[2]}</p>`; // affiche son objectif de vie
-  html += "<h3>Cadeau d'anniversaire</h3>"; // titre pour les couleurs
-  html += `<p>${person[3]}</p>`; // affiche son rêve
+  html += "<h3>Son rêve</h3>"; // titre
+  html += `<p>${person[2]}</p>`; // affiche son rêve
+  html += "<h3>Cadeau d'anniversaire</h3>"; // titre
+  html += `<p>${person[3]}</p>`; // affiche son cadeau d'anniversaire
   people.innerHTML = html; // on affiche le tout dans la div people
 }
 
-chercher.addEventListener("click", function () {
+// Fonction du bouton "Chercher"
+chercher.addEventListener("click", function () { 
   let trouve = false; // est-ce qu'on a trouvé la personne ?
+
   for (let i = 0; i < users.length; i++) {
     // pour chaque personne
-    if (users[i][0].toLowerCase() === nom.value.toLowerCase()) {
-      trouve = true;
-      displayUser(users[i], i + 1); // on affiche la personne
+    if (users[i][0].toLowerCase() === nom.value.toLowerCase()) { // si l'élément du nom entrer dans chercher est
+      // sitrictement égal à l'élément de l'élément d'un tableau en première position alors c'est celui-ci
+      trouve = true; // si ok alors
+      displayUser(users[i], i + 1);
+       // on affiche la personne (un élément du tableau users -> avec ses éléments dedans)
       break; // on sort de la boucle
     }
   }
-  if (!trouve) {
+  if (!trouve) { // 
     people.innerHTML =
       "<p>Désolé! Ce nom n'est pas encore connu par notre base de données.</p>";
   }
 });
 
-aleatoire.addEventListener("click", function () {
-  const i = Math.floor(Math.random() * users.length);
-  displayUser(users[i], i + 1); // on affiche la personne
+// Fonction du bouton "Aléatoire"
+aleatoire.addEventListener("click", function () { 
+  const i = Math.floor(Math.random() * users.length); //floor arrondir au numéro le plus bas * la longueur du tab users
+  displayUser(users[i], i + 1); // on affiche la personne par rapport à sa position
 });
 
-effacer.addEventListener("click", function () {
+// Fonction du bouton "Effacer"
+effacer.addEventListener("click", function () { 
   nom.value = "";
   people.innerHTML = "Les infos...";
 });
 
-// ajouter des commentaires
