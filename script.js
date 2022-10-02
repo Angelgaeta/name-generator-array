@@ -7,13 +7,12 @@
 4. On créé les 3 fonctions pour les 3 boutons: chercher, aléatoire et effacer
 */
 
-
 const nom = document.getElementById("nom");
 const chercher = document.getElementById("chercher");
 const aleatoire = document.getElementById("aleatoire");
 const effacer = document.getElementById("effacer");
 const people = document.getElementById("people");
-const title = document.getElementById("title");
+
 
 const users = [
   ["Raphael", "26/02/1990", "Etre en 100% télétravail", "1 Milliard €"],
@@ -78,17 +77,18 @@ const users = [
 ];
 
 // Fonction pour factoriser le code et le rendre plus lisible
-function displayUser(person, position) { // person est représenter par guillemets obliques pour
+function displayUser(person) { // person est représenter par guillemets obliques pour
   // transformer en "template" tout ce qui se trouve dans ${} dedans remplacé par sa valeur
   // position est égal à ${person[0]} 
-  let html = "<h1>Personne n°" + position + "</h1>"; // on écrit "person {numéro de la personne}"
-  html += `<h2>${person[0]}</h2>`;
+  let html = "<strong>Résultats:</strong>"; // on écrit "person {numéro de la personne}"
+  html += `<td><h2 style="color:blue">${person[0]}</h2></td>`;
   html += `<p>Né•e le ${person[1]}</p>`; // affiche sa date de naissance
   html += "<h3>Son rêve</h3>"; // titre
   html += `<p>${person[2]}</p>`; // affiche son rêve
   html += "<h3>Cadeau d'anniversaire</h3>"; // titre
   html += `<p>${person[3]}</p>`; // affiche son cadeau d'anniversaire
   people.innerHTML = html; // on affiche le tout dans la div people
+
 }
 
 // Fonction du bouton "Chercher"
@@ -119,7 +119,7 @@ aleatoire.addEventListener("click", function () {
 
 // Fonction du bouton "Effacer"
 effacer.addEventListener("click", function () { 
-  nom.value = "";
+  nom.values = "";
   people.innerHTML = "Les infos...";
 });
 
