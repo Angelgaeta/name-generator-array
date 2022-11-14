@@ -35,17 +35,19 @@ form {
 
 h1 {
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 input {
     cursor: pointer;
     padding: 10px;
+    border: none;
 }
 
 input:hover {
-    background: #1abc9c;
+    background: rgba(0, 50, 91, 0.812);
     cursor: pointer;
+    color: white
 }
 
 @media (max-width: 980px) {
