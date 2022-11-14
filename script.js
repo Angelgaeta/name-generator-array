@@ -15,62 +15,62 @@ const people = document.getElementById("people");
 
 
 const users = [
-  ["Raphael", "26/02/1990", "Etre en 100% télétravail", "1 Milliard €"],
+  ["Raphael"," 💸", "Né le 26/02/1990", "Etre en 100% télétravail", "1 Milliard €"],
   [
-    "Lésa",
-    "02/03/1993",
+    "Lésa", " 🐈",
+    "Née le 02/03/1993",
     "Ouvrir un hotel pour chat",
     "Avoir la voix de Beyonce",
   ],
-  ["Julien F", "06/01/1981", "Etre rentier", "Un voyage au japon"],
-  ["Marilyn", "14/12/1991", "Voler sur un dragon", "Du chocolat"],
-  ["Enzo", "26/08/2003", "Aller au japon", "Un Burger King"],
+  ["Julien F", " 🇯🇵", "Né le 06/01/1981", "Etre rentier", "Un voyage au japon"],
+  ["Marilyn", " 🐉", "Née le 14/12/1991", "Voler sur un dragon", "Du chocolat"],
+  ["Enzo",  " 🍔", "Né le 26/08/2003", "Aller au japon", "Un Burger King"],
   [
-    "Sofian lunette",
-    "07/08/1984",
+    "Sofian lunette", " 🐻",
+    "Né le 07/08/1984",
     "Vivre dans le monde des bisounours",
     "Une sortie avec le groupe DWWM pour fêter la certification ",
   ],
-  ["Sofian", "19/02/1988", "Devenir le prochain elon Musk", "La BMW de Murphy"],
-  ["Hedy", "20/11/1983", "Avoir une ferme au pays", "La moto de Murphy"],
-  ["Perrine", "02/06/1988", "Visiter la nouvelle-Zelande", "Nada"],
-  ["Mathieu", "15/11/1990", "Aller sur Mars", "Une Fusée"],
+  ["Sofian", " 🏎","Né le 19/02/1988", "Devenir le prochain elon Musk", "La BMW de Murphy"],
+  ["Hedy", " 🌱", "Né le 20/11/1983", "Avoir une ferme au pays", "La moto de Murphy"],
+  ["Perrine", " 🇳🇿", "Née le 02/06/1988", "Visiter la nouvelle-Zelande", "Une Aston Martin"],
+  ["Mathieu", " 🚀", "Né le 15/11/1990", "Aller sur Mars", "Une Fusée"],
   [
-    "Samuel",
-    "10/01/1997",
+    "Samuel", " 🏡",
+    "Né le 10/01/1997",
     "Parler toutes les langues de l'Univers",
     "Avoir une maison dans la prairie",
   ],
-  ["Esteban", "21/04/2000", "Vivre au sahara", "Un setup"],
-  ["Angelique", "14/03/1988", "Ascension du Mont blanc", "Le permis moto"],
+  ["Esteban", " 🐪​", "Né le 21/04/2000", "Vivre au sahara", "Un setup"],
+  ["Angélique", " 🪐​​", "Née le 14/03/1988", "Ascension du Mont blanc", "Un voyage dans l'espace"],
   [
-    "Julien D.",
-    "06/09/1980",
+    "Julien D.", " 🏇​​",
+    "Né le 06/09/1980",
     "Traverser la route de Sete sans mourir",
     "Un petit Canidé",
   ],
-  ["Stephane", "13/12/1966", "Devenir Sage", "Une Ford Mustang Mach One 1970"],
+  ["Stephane", " 🧘🏻‍♂️​​", "Né le 13/12/1966", "Devenir Sage", "Une Ford Mustang Mach One 1970"],
   [
-    "Steven",
-    "27/07/1989",
+    "Steven", " 🗺️",
+    "Né le 27/07/1989",
     "Faire la demi-année à Porto-Rico et l'autre en France",
     "Un voyage en Grèce",
   ],
   [
-    "Murphy",
-    "14/06/1994",
+    "Murphy", " 🏍",
+    "Né le 14/06/1994",
     "Pouvoir de persuasion absolue",
     "Une nouvelle moto",
   ],
   [
-    "Roxane",
-    "20/02/1991",
+    "Roxane", " 🌍",
+    "Née le 20/02/1991",
     "Tous comprendre facilement et rapidement dans tous les languages de programmation",
     "Un voyage autour du monde avec toute ma famille",
   ],
   [
-    "Michael",
-    "02/01/1998",
+    "Michael", " 🎼",
+    "Né le 02/01/1998",
     "Vivre de sa passion( composer des musiques pour jeux, films,faire des évènements avec des psittacidés ou d'autres petits oiseaux pour éveiller la curiosité et partager mes connaissances)",
     "Quetchi",
   ],
@@ -80,19 +80,22 @@ const users = [
 function displayUser(person) { // person est représenter par guillemets obliques pour
   // transformer en "template" tout ce qui se trouve dans ${} dedans remplacé par sa valeur
   // position est égal à ${person[0]} 
-  let html = "<strong>Résultats:</strong>"; // on écrit "person {numéro de la personne}"
-  html += `<td><h2 style="color:blue">${person[0]}</h2></td>`;
-  html += `<p>Né•e le ${person[1]}</p>`; // affiche sa date de naissance
-  html += "<h3>Son rêve</h3>"; // titre
-  html += `<p>${person[2]}</p>`; // affiche son rêve
-  html += "<h3>Cadeau d'anniversaire</h3>"; // titre
-  html += `<p>${person[3]}</p>`; // affiche son cadeau d'anniversaire
+  let html = `<h2>${person[1]}</h2>`; // affiche sa date de naissance
+  html +=`<h2 style="color:white">${person[0].toUpperCase()} </h2>`
+  html += `${person[2]}`; // affiche sa date de naissance
+  html += `<p><br></p>`; 
+  html += "<h3>Son rêve:</h3>"; // titre
+  html += `<p>${person[3]}</p>`; // affiche son rêve
+  html += `<p><br></p>`; 
+  html += "<h3>Cadeau d'anniversaire:</h3>"; // titre
+  html += `<p>${person[4]}</p>`; // affiche son cadeau d'anniversaire
+  html += `<p><br></p>`; 
   people.innerHTML = html; // on affiche le tout dans la div people
 
 }
 
 // Fonction du bouton "Chercher"
-chercher.addEventListener("click", function () { 
+chercher.addEventListener("click", function () { //attache une fonction à appeler chq fois que l'événement est envoyé à la cible
   let trouve = false; // est-ce qu'on a trouvé la personne ?
 
   for (let i = 0; i < users.length; i++) {
