@@ -1,3 +1,3 @@
 # Rechercher les infos d'une personne à partir de son nom
-Réalisé avec un tableau multidimentionnel JavaScript - TP de formation Développeur Web <br>
+Réalisé avec un tableau multidimentionnel JavaScript - TP de formation Développeur Web
 https://angelgaeta.github.io/name-generator-array/ 
